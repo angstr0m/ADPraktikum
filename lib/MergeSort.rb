@@ -1,5 +1,7 @@
 require './AbstractSorter'
 
+#test
+
 class MergeSort < AbstractSorter
   def performSort()
     sortBetween(0,@data.size)
