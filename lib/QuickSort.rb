@@ -19,27 +19,45 @@ class QuickSort < AbstractSorter
   end
   
   def teile(left, right)
-    i = links 
-    j = rechts - 1
-    pivot = daten[rechts]
+    i = left 
+    j = right - 1
+    pivot = @data[right]
     
     begin
       
-#      // Suche von links ein Element, welches größer als das Pivotelement ist
-#         wiederhole solange daten[i] ≤ pivot und i < rechts
-#             i := i + 1
-#         ende
-#
-#         // Suche von rechts ein Element, welches kleiner als das Pivotelement ist
-#         wiederhole solange daten[j] ≥ pivot und j > links
-#              j := j - 1 
-#         ende
-#
-#         falls i < j dann
-#             tausche daten[i] mit daten[j]
-#         ende
+      while ((@data[i] <= pivot) && i < right)
+        i += 1
+      end
       
-    
+      while (@data[j] >= pivot && j > left)
+        j -= 1
+      end
+      
+      if (i < j)
+        exchange(i,j)
+      end
+      
     end until(i >= j)
+    
+    #falls daten[i] > pivot dann
+    #         tausche daten[i] mit daten[rechts]
+    # ende
+    
+    if (@data[i] > pivot)
+      exchange(i,right)
+    end
+    
+    return i
   end
 end
+
+testQuickSort = QuickSort.new
+testQuickSort.fillDescending(10)
+testQuickSort.permuteRandom(50)
+#testQuickSort.fillWithText('./MobyDick.txt')
+puts "SelectionSort"
+puts "-------------"
+puts "Unsorted Data"
+puts testQuickSort.data
+puts "-------------"
+testQuickSort.sort()
