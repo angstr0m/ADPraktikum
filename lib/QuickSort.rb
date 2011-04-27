@@ -21,15 +21,15 @@ class QuickSort < AbstractSorter
   def teile(left, right)
     i = left 
     j = right - 1
-    pivot = @data[right]
+    pivot = self[right]
     
     begin
       
-      while ((@data[i] <= pivot) && i < right)
+      while ((compare(self[i], pivot) < 1) && i < right)
         i += 1
       end
       
-      while (@data[j] >= pivot && j > left)
+      while ((compare(self[j], pivot) > -1) && j > left)
         j -= 1
       end
       
@@ -39,11 +39,7 @@ class QuickSort < AbstractSorter
       
     end until(i >= j)
     
-    #falls daten[i] > pivot dann
-    #         tausche daten[i] mit daten[rechts]
-    # ende
-    
-    if (@data[i] > pivot)
+    if (compare(self[i], pivot) == 1 )
       exchange(i,right)
     end
     
