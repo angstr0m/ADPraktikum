@@ -47,13 +47,14 @@ class QuickSort < AbstractSorter
   end
 end
 
-testQuickSort = QuickSort.new
-testQuickSort.fillDescending(10)
-testQuickSort.permuteRandom(50)
+#testQuickSort = QuickSort.new
+##testQuickSort.fillDescending(10)
+##testQuickSort.permuteRandom(50)
 #testQuickSort.fillWithText('./MobyDick.txt')
-puts "SelectionSort"
-puts "-------------"
-puts "Unsorted Data"
-puts testQuickSort.data
-puts "-------------"
-testQuickSort.sort()
+#puts "SelectionSort"
+#puts "-------------"
+##puts "Unsorted Data"
+##puts testQuickSort.data
+#puts "-------------"
+#testQuickSort.sort()
+#puts testQuickSort.data

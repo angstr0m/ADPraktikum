@@ -84,15 +84,15 @@ class AbstractSorter
       checkPostConditions()
     end
 
-    puts "--- Sortierung abgeschlossen ---"
-    puts "Sortierte Daten:"
-    puts self.data
-    puts "------------"
-    puts "Access Count"
-    puts self.accessCount
-    puts "Compare Count"
-    puts self.compareCount
-    puts "------------"
+    #puts "--- Sortierung abgeschlossen ---"
+    #puts "Sortierte Daten:"
+    #puts self.data
+    #puts "------------"
+    #puts "Access Count"
+    #puts self.accessCount
+    #puts "Compare Count"
+    #puts self.compareCount
+    #puts "------------"
     
   end
 
@@ -121,9 +121,11 @@ class AbstractSorter
   end
 
   def fillAllEqual(aCount)
+    index = 0
     @data = Array.new()
     aCount.times do
       @data[index] = 42
+      index += 1
     end
   end
 
@@ -366,49 +368,9 @@ class AbstractSorter
   end
 end
 
-class SelectionSort < AbstractSorter
-  
-  def performSort()
-    sortBetween(0,@data.size - 1)
-  end
 
-  def sortBetween(index1, index2)
-    n = index2
-    links = index1
 
-    while links < n
-      #puts "durchlauf"
-      min = links
 
-      for i in (links + 1)..n
-        if (compare(self[i], self[min]) == -1)
-          min = i
-        end
-      end
-
-      exchange(min, links)
-      links += 1
-    end
-  end
-end
-
-class InsertionSort < AbstractSorter
-  def performSort()
-    sortBetween(0,@data.size - 1)
-  end
-
-  def sortBetween(index1, index2)
-    for i in index1..index2 do
-      einzusortierender_wert = self[i]
-      j = i
-      while j > 0 and compare(self[j-1], einzusortierender_wert) == 1 do
-        self[j] = self[j - 1]
-        j = j - 1
-      end
-      self[j] = einzusortierender_wert
-    end
-  end
-end
 
 class Object
   def abstract()
@@ -420,22 +382,22 @@ end
 #testSelectionSort.fillDescending(10)
 #testSelectionSort.permuteRandom(50)
 ##testSelectionSort.fillWithText('./MobyDick.txt')
-#puts "SelectionSort"
-#puts "-------------"
-#puts "Unsorted Data"
-#puts testSelectionSort.data
-#puts "-------------"
+##puts "SelectionSort"
+##puts "-------------"
+##puts "Unsorted Data"
+##puts testSelectionSort.data
+##puts "-------------"
 #testSelectionSort.sort()
 #
 #testInsertionSort = InsertionSort.new
 ##testInsertionSort.fillWithText('./MobyDick.txt')
 #testInsertionSort.fillDescending(10)
 #testInsertionSort.permuteRandom(50)
-##puts testInsertionSort.data
+###puts testInsertionSort.data
 #testInsertionSort.checkOn
-#puts "InsertionSort 1"
-#puts "---------------"
+##puts "InsertionSort 1"
+##puts "---------------"
 #testInsertionSort.sort
-#puts "InsertionSort 2"
-#puts "---------------"
+##puts "InsertionSort 2"
+##puts "---------------"
 #testInsertionSort.sort([1,3,4,2,7],Proc.new {|a,b| a<=>b})

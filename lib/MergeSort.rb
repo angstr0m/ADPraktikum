@@ -18,14 +18,14 @@ class MergeSort < AbstractSorter
     
     index_half = (datalist.size/2).floor - 1
     
-    puts "Size: " + datalist.size.to_s
-    puts "Size/2: " + (datalist.size/2).floor.to_s
-    puts "HalberIndex " + index_half.to_s
+#    puts "Size: " + datalist.size.to_s
+#    puts "Size/2: " + (datalist.size/2).floor.to_s
+#    puts "HalberIndex " + index_half.to_s
       
     block1 = datalist.slice(0..index_half)
-    puts "Block1 " + block1.to_s
+    #puts "Block1 " + block1.to_s
     block2 = datalist.slice((index_half + 1)..(datalist.size))
-    puts "Block2 " + block2.to_s
+    #puts "Block2 " + block2.to_s
     
     list1 = split(block1)
     list2 = split(block2)
@@ -68,13 +68,13 @@ class MergeSort < AbstractSorter
   end
 end
 
-testMergeSort = MergeSort.new
-#testMergeSort.fillDescending(10)
-#testMergeSort.permuteRandom(50)
-testMergeSort.fillWithText('./MobyDick.txt')
-puts "SelectionSort"
-puts "-------------"
-puts "Unsorted Data"
-puts testMergeSort.data
-puts "-------------"
-testMergeSort.sort()
+#testMergeSort = MergeSort.new
+##testMergeSort.fillDescending(10)
+##testMergeSort.permuteRandom(50)
+#testMergeSort.fillWithText('./MobyDick.txt')
+#puts "SelectionSort"
+#puts "-------------"
+##puts "Unsorted Data"
+##puts testMergeSort.data
+#puts "-------------"
+#testMergeSort.sort()
