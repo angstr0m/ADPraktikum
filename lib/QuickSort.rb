@@ -21,7 +21,7 @@ class QuickSort < AbstractSorter
   def teile(left, right)
     i = left 
     j = right - 1
-    pivot = self[right]
+    pivot = getPivot(left,right)
     
     begin
       
@@ -45,6 +45,11 @@ class QuickSort < AbstractSorter
     
     return i
   end
+  
+  def getPivot(left,right)
+    exchange((right+left)/2,right)
+    return self[right]
+  end 
 end
 
 #testQuickSort = QuickSort.new

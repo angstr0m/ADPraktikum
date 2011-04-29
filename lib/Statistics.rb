@@ -20,7 +20,7 @@ class Statistics
   
   def initialize()
     #, 10000, 100000
-    @values_for_n = Array[10, 100, 1000, 10000, 100000]
+    @values_for_n = Array[10, 100, 1000, 10000]
     @data_configurations = Array[:ASC, :DSC, :EQL, :RND]
     @algorithms = Array[:SELECT, :INSERT, :MERGE, :QUICK]
     @tableEntries = Array.new()
