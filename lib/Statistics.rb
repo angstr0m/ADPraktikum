@@ -20,7 +20,7 @@ class Statistics
   
   def initialize()
     #, 10000, 100000
-    @values_for_n = Array[10, 100, 1000, 10000]
+    @values_for_n = Array[10, 100, 1000]
     @data_configurations = Array[:ASC, :DSC, :EQL, :RND]
     @algorithms = Array[:SELECT, :INSERT, :MERGE, :QUICK]
     @tableEntries = Array.new()
@@ -73,7 +73,7 @@ class TestAlgorithm
     when :EQL
       @algorithm.fillAllEqual(n)
     when :RND
-      @algorithm.fillAllEqual(n)
+      @algorithm.fillDescending(n)
       @algorithm.permuteRandom(2 * n)
     end
   end
@@ -120,4 +120,3 @@ end
 s = Statistics.new()
 s.testAlgorithms()
 puts s.tableEntries
-#puts "BLA"

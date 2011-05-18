@@ -143,7 +143,7 @@ class AbstractSorter
   def randomIndexBetween(firstIndex, lastIndex)
     check(true, int?(firstIndex), "Parameter is not a integer :(.")
     check(true, int?(lastIndex), "Parameter is not a integer :(.")
-    return firstIndex + rand(lastIndex + 1)
+    return (firstIndex + rand(lastIndex + 1 - firstIndex))
   end
 
   def permuteRandom(aCount, seed = 0)
@@ -333,7 +333,11 @@ class AbstractSorter
   # utility methods
   # Compare anObj to anotherObj using the spaceship-operator.
   def compare(anObj, anotherObj)
-
+    
+    if (anObj == nil || anotherObj == nil)
+      raise "compare: one argument is nil"
+    end
+    
     @compareCount += 1
 
     if (@SortBlock)

@@ -69,12 +69,13 @@ class MergeSort < AbstractSorter
 end
 
 #testMergeSort = MergeSort.new
-##testMergeSort.fillDescending(10)
-##testMergeSort.permuteRandom(50)
+#testMergeSort.fillDescending(10)
+#testMergeSort.permuteRandom(50)
 #testMergeSort.fillWithText('./MobyDick.txt')
 #puts "SelectionSort"
 #puts "-------------"
-##puts "Unsorted Data"
-##puts testMergeSort.data
+#puts "Unsorted Data"
+#puts testMergeSort.data
 #puts "-------------"
 #testMergeSort.sort()
+#puts testMergeSort.data

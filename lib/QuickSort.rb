@@ -47,19 +47,28 @@ class QuickSort < AbstractSorter
   end
   
   def getPivot(left,right)
-    exchange((right+left)/2,right)
+    #exchange((right+left)/2,right)
+    if (left < right)
+      exchange( randomIndexBetween(left, right), right)
+    end
+    tmp = self[right]
+    if (tmp == nil)
+      puts right
+      p @data
+      raise "#{right} is out of bounds"
+    end
     return self[right]
   end 
 end
 
 #testQuickSort = QuickSort.new
-##testQuickSort.fillDescending(10)
-##testQuickSort.permuteRandom(50)
-#testQuickSort.fillWithText('./MobyDick.txt')
-#puts "SelectionSort"
-#puts "-------------"
-##puts "Unsorted Data"
-##puts testQuickSort.data
+#testQuickSort.fillDescending(10)
+#testQuickSort.permuteRandom(50)
+##testQuickSort.fillWithText('./MobyDick.txt')
+##puts "SelectionSort"
+##puts "-------------"
+#puts "Unsorted Data"
+#puts testQuickSort.data
 #puts "-------------"
 #testQuickSort.sort()
 #puts testQuickSort.data
